@@ -19,11 +19,11 @@ namespace ZaiPangBuy
                 ExecutCmd(cmd, "shell input tap 526 1250");                
             };
 
-            // List<string> devices = GetDevices();
+            List<string> devices = GetDevices();
             string result = ExecutCmd(cmd, "connect 127.0.0.1:21503");
             if (result.Contains("already connected to"))
             {
-                timer.Start();
+                //timer.Start();
             }
             Console.ReadKey();
         }
@@ -41,7 +41,7 @@ namespace ZaiPangBuy
 
             var ip_ip = "(25[0-5]|2[0-4]\\d|1\\d\\d|\\d\\d|\\d)";
             var ip_ipdot = ip_ip + "\\.";
-            var ip_port = "(:(\\d\\d\\d\\d|\\d\\d\\d|\\d\\d|\\d|\\d))?";
+            var ip_port = "(:(\\d\\d\\d\\d\\d|\\d\\d\\d\\d|\\d\\d\\d|\\d\\d|\\d))?";
             string RegexStr = ip_ipdot + ip_ipdot + ip_ipdot + ip_ip + ip_port;
 
             if (Regex.IsMatch(str, RegexStr))

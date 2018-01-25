@@ -11,7 +11,7 @@ namespace ZaiPangWin
         public static void SetNormalSetting(this Form form)
         {
             form.MaximizeBox = false;
-            form.MinimizeBox = false;
+            form.MinimizeBox = true;
             form.ShowIcon = false;
             //不能改变大小
             form.FormBorderStyle = FormBorderStyle.Fixed3D;

@@ -101,10 +101,13 @@ namespace ZaiPangWin
 
         private void ShowMsg(string msg)
         {
-            if (this.rtbMsg.Text.Length > 2000)
-                this.rtbMsg.Text = "";
+            rtbMsg.Invoke(new Action<string>((m) =>
+            {
+                if (this.rtbMsg.Text.Length > 2000)
+                    this.rtbMsg.Text = "";
 
-            this.rtbMsg.Text = DateTime.Now.ToString("HH:mm:ss") + " " + msg + "\r\n" + rtbMsg.Text;
+                this.rtbMsg.Text = DateTime.Now.ToString("HH:mm:ss") + " " + msg + "\r\n" + rtbMsg.Text;
+            }), "");
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -136,8 +139,8 @@ namespace ZaiPangWin
         }
 
         private void Timer_Tick(object sender, EventArgs e)
-        {           
-            Tap();
+        {
+            new System.Threading.Thread(Tap).Start();
         }
 
         private void Tap()

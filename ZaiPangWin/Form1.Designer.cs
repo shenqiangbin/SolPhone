@@ -137,7 +137,7 @@
             this.txtInterval.Name = "txtInterval";
             this.txtInterval.Size = new System.Drawing.Size(160, 21);
             this.txtInterval.TabIndex = 2;
-            this.txtInterval.Text = "0.5";
+            this.txtInterval.Text = "0.1";
             // 
             // lblTime
             // 
